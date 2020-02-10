@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from blog.views import hello, post_create_view
+from blog.views import hello, post_create_view, test_json_response_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', hello),
-    path('blog/create/', post_create_view)
+    path('blog/create/', post_create_view),
+    path('test/', test_json_response_view)
+
 ]
