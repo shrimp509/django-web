@@ -4,10 +4,15 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.handlers.wsgi import WSGIRequest
 import json
 
-from .forms import PostForm
-from .models import Post
+# from .forms import PostForm
+# from .models import Post
 
 
+def shop_view(request):
+	return render(request, 'blog/shop.html', {})
+
+
+'''
 def post_create_view(request):
 	form = PostForm(request.POST or None)
 	print("form valid: ", form.is_valid, ", request: ", request)
@@ -49,3 +54,4 @@ def hello(request):
 			"second_var": 87.8787,
 			"third_list": ["歡迎", "你好", "我是 RS", "來比對我阿"]
 		})
+'''
