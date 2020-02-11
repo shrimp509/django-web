@@ -9,7 +9,7 @@ import json
 
 
 def shop_view(request):
-	return render(request, 'blog/shop.html', {})
+	return render(request, 'shop/shop.html', {})
 
 
 '''
@@ -22,7 +22,7 @@ def post_create_view(request):
 	context = {
 		'form': form
 	}
-	return render(request, 'blog/post_create.html', context)
+	return render(request, 'shop/post_create.html', context)
 
 
 @csrf_exempt
@@ -49,7 +49,7 @@ def test_json_response_view(request: WSGIRequest):
 
 
 def hello(request):
-	return render(request, 'blog/index.html', {
+	return render(request, 'shop/index.html', {
 			"first_var": "Hello Man",
 			"second_var": 87.8787,
 			"third_list": ["歡迎", "你好", "我是 RS", "來比對我阿"]
