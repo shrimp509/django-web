@@ -9,15 +9,29 @@ import json
 
 
 def shop_view(request):
-	return render(request, 'shop/shop.html', {})
+	context = {
+		'bg_6': '/static/images/bg_6.jpg'
+	}
+	return render(request, 'shop/shop.html', context)
 
 
 def product_view(request):
-	return render(request, 'shop/product-single.html', {})
+	context = {
+		'bg_6': '/static/images/bg_6.jpg'
+	}
+	return render(request, 'shop/product-single.html', context)
 
 
 def about_view(request):
-	return render(request, 'shop/about.html', {})
+	context = {
+		'bg_6': '/static/images/bg_6.jpg',
+		'bg_2': '/static/images/bg_2.jpg',
+		'bg_4': '/static/images/bg_4.jpg',
+		'person_1': '/static/images/person_1.jpg',
+		'person_2': '/static/images/person_2.jpg',
+		'person_3': '/static/images/person_3.jpg',
+	}
+	return render(request, 'shop/about.html', context)
 
 
 def cart_view(request):
