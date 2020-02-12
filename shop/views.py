@@ -5,12 +5,13 @@ from django.core.handlers.wsgi import WSGIRequest
 import json
 
 # from .forms import PostForm
-# from .models import Post
+from .models import Product
 
 
 def shop_view(request):
 	context = {
-		'bg_6': '/static/images/bg_6.jpg'
+		'bg_6': '/static/images/bg_6.jpg',
+		'products': list(Product.objects.all())
 	}
 	return render(request, 'shop/shop.html', context)
 
