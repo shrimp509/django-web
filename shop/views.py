@@ -35,11 +35,20 @@ def about_view(request):
 
 
 def cart_view(request):
-	return render(request, 'shop/cart.html', {})
+	context = {
+		'bg_6': '/static/images/bg_6.jpg',
+		'product_3': '/static/images/product-3.jpg',
+		'product_4': '/static/images/product-4.jpg',
+	}
+	return render(request, 'shop/cart.html', context)
 
 
 def checkout_view(request):
-	return render(request, 'shop/checkout.html', {})
+	context = {
+		'bg_6': '/static/images/bg_6.jpg',
+
+	}
+	return render(request, 'shop/checkout.html', context)
 
 
 '''
