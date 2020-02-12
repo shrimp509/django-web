@@ -18,6 +18,8 @@ from django.urls import path
 
 from shop.views import shop_view, product_view, \
     about_view, cart_view, checkout_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +27,7 @@ urlpatterns = [
     path('product/', product_view),
     path('about/', about_view),
     path('cart/', cart_view),
-    path('checkout/', checkout_view)
+    path('checkout/', checkout_view),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

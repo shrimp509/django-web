@@ -4,14 +4,14 @@ import os
 
 
 def get_image_path(instance, filename):
-    return os.path.join('uploads', str(instance.id), filename)
+    return os.path.join('uploads', filename)
 
 
 class Product(models.Model):
     # basic info
     name = models.CharField(max_length=100, blank=False)
     price = models.DecimalField(blank=False, max_digits=100, decimal_places=0)
-    img = models.ImageField(upload_to=get_image_path, default='uploads/product-1.jpg')
+    img = models.ImageField(upload_to=get_image_path, default=get_image_path(instance=0, filename='product-1.jpg'))
 
     # discount
     on_sale = models.BooleanField(blank=True, null=True)
