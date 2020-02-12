@@ -12,6 +12,22 @@ def shop_view(request):
 	return render(request, 'shop/shop.html', {})
 
 
+def product_view(request):
+	return render(request, 'shop/product-single.html', {})
+
+
+def about_view(request):
+	return render(request, 'shop/about.html', {})
+
+
+def cart_view(request):
+	return render(request, 'shop/cart.html', {})
+
+
+def checkout_view(request):
+	return render(request, 'shop/checkout.html', {})
+
+
 '''
 def post_create_view(request):
 	form = PostForm(request.POST or None)
