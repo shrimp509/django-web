@@ -8,7 +8,10 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run: echo "Hello World"
+      - run:
+          command: |
+            source django-env/Script/activate
+            echo "Run env successful."
 
 workflows:
   main:
