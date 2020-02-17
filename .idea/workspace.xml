@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e594bbd-ae9e-4de6-a105-a204186bb28e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XvHBJy7ZVVB3ZzT4mrxXQqhJ4q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e594bbd-ae9e-4de6-a105-a204186bb28e" name="Default Changelist" comment="" />
+      <created>1581919510367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581919510367</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-7" y="-7" width="667" height="767" maximized="true" key="DiffContextDialog" timestamp="1581933728296">
+      <screen x="0" y="0" width="1707" height="960" />
+    </state>
+    <state x="-7" y="-7" width="667" height="767" maximized="true" key="DiffContextDialog/0.0.1707.960@0.0.1707.960" timestamp="1581933728296" />
+    <state x="943" y="210" width="672" height="678" key="search.everywhere.popup" timestamp="1581920094621">
+      <screen x="0" y="0" width="1707" height="960" />
+    </state>
+    <state x="943" y="210" width="672" height="678" key="search.everywhere.popup/0.0.1707.960@0.0.1707.960" timestamp="1581920094621" />
+  </component>
+</project>
