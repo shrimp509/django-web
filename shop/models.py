@@ -10,7 +10,7 @@ def get_image_path(instance, filename):
 class Product(models.Model):
     # basic info
     name = models.CharField(max_length=100, blank=False)
-    price = models.DecimalField(blank=False, max_digits=100, decimal_places=0)
+    price = models.DecimalField(blank=False, max_digits=65, decimal_places=0)
     img = models.ImageField(upload_to=get_image_path, default=get_image_path(instance=0, filename='product-1.jpg'))
 
     # discount
@@ -31,3 +31,5 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = 'product'

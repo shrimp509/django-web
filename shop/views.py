@@ -4,23 +4,57 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.handlers.wsgi import WSGIRequest
 import json
 
-# from .forms import PostForm
+from django.http import HttpResponse
+import random
+
 from .models import Product
 
 
+def delect_view(request):
+    product = Product.objects.get(id=1)
+    product.delete()
+    return HttpResponse('刪除 id=1 的資料成功，請到 SQL shell 下指令\nsql> select * from product')
+
+
+def modify_view(request):
+    product = Product.objects.get(id=1)
+    product.name = "我是後來才修改的產品"
+    product.save()
+    return HttpResponse('修改完成，到 Mongo Compass 確認資料')
+
+
+def lookup_view(request):
+    result = Product.objects.all()
+    mlist = []
+    for item in result:
+        content = {"product name": item.name, "price": float(item.price)}
+        mlist.append(content)
+
+    return HttpResponse(mlist)
+
+def insert_view(request):
+    for i in range(5):
+        product = Product()
+        product.name = "測試" + str(random.randint(0, 5))
+        product.price = random.randint(1, 500)
+        product.save()
+
+    return HttpResponse("批次新增資料完成")
+
+
 def shop_view(request):
-	context = {
-		'bg_6': '/static/images/bg_6.jpg',
-		'products': list(Product.objects.all())
-	}
-	return render(request, 'shop/shop.html', context)
+    context = {
+        'bg_6': '/static/images/bg_6.jpg',
+        'products': list(Product.objects.all())
+    }
+    return render(request, 'shop/shop.html', context)
 
 
 def product_view(request):
-	context = {
-		'bg_6': '/static/images/bg_6.jpg'
-	}
-	return render(request, 'shop/product-single.html', context)
+    context = {
+        'bg_6': '/static/images/bg_6.jpg'
+    }
+    return render(request, 'shop/product-single.html', context)
 
 
 def about_view(request):
