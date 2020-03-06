@@ -91,7 +91,7 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'shop',
             'HOST': '127.0.0.1',
-            'USER': 'rs',
+            'USER': 'root',
             'PASSWORD': 'admin',
         }
     }

@@ -11,7 +11,7 @@ jobs:
         environment:
           MYSQL_DATABASE: shop
           MYSQL_ROOT_HOST: "%"
-          MYSQL_USER: rs
+          MYSQL_USER: root
           MYSQL_PASSWORD: admin
     executor: python/default
     steps:
@@ -52,6 +52,10 @@ jobs:
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account django-shop-269303@appspot.gserviceaccount.com --key-file=-
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+      - run:
+          name: Make migrations
+          command: |
+            python manage.py makemigrations
       - run:
           name: Deploy to App Engine
           command: |
