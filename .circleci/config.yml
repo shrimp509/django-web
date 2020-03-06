@@ -1,9 +1,19 @@
+version: 2.1
 
-version: 2
+orbs: 
+  python: circleci/python@0.2.1
+
 jobs:
-  build:
+  build-and-test:
     docker:
-      - image: circleci/python:3.6
+      - image: circleci/python:3.7
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: shop
+          MYSQL_ROOT_HOST: "%"
+          MYSQL_USER: rs
+          MYSQL_PASSWORD: admin
+    executor: python/default
     steps:
       - checkout
       - restore_cache:
@@ -21,7 +31,36 @@ jobs:
           name: Running tests
           command: |
             . venv/bin/activate
-            python3 manage.py test
+            python manage.py test
       - store_artifacts:
           path: test-reports/
           destination: python_app
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build-and-text
+            - app.yaml
+
+  deploy:
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - checkout
+      - run:
+          name: Authorizing gcloud
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account django-shop-269303@appspot.gserviceaccount.com --key-file=-
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+      - run:
+          name: Deploy to App Engine
+          command: |
+            gcloud app deploy
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
+      - deploy:
+          requires:
+            - build-and-test
