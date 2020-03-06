@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e594bbd-ae9e-4de6-a105-a204186bb28e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +53,10 @@
       <screen x="0" y="0" width="1707" height="960" />
     </state>
     <state x="1061" y="236" key="FileChooserDialogImpl/0.0.1707.960@0.0.1707.960" timestamp="1583475873179" />
-    <state x="711" y="123" key="SettingsEditor" timestamp="1583475878734">
+    <state x="711" y="123" key="SettingsEditor" timestamp="1583477376748">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
-    <state x="711" y="123" key="SettingsEditor/0.0.1707.960@0.0.1707.960" timestamp="1583475878734" />
+    <state x="711" y="123" key="SettingsEditor/0.0.1707.960@0.0.1707.960" timestamp="1583477376748" />
     <state x="965" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1582700128071">
       <screen x="0" y="0" width="1707" height="960" />
     </state>

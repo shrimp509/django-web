@@ -74,26 +74,27 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'django_mysql',
-    #     'USER': 'root',
-    #     'PASSWORD': 'admin',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': 3306,
-    # },
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'django',
-        'ENFORCE_SCHEMA': False,
-        'HOST': 'mongodb://127.0.0.1:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false',
-    },
-}
+if os.getenv('GAE_APPLICATION', None):
+    DATABASES = {
+        # mysql of google cloud sql
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'shop',
+            'HOST': '/cloudsql/django-shop-269303:asia-east1:django-mysql',
+            'USER': 'rs',
+            'PASSWORD': 'admin',
+        },
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'shop',
+            'HOST': '127.0.0.1',
+            'USER': 'rs',
+            'PASSWORD': 'admin',
+        }
+    }
 
 
 # Password validation
